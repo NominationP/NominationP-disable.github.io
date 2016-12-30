@@ -1,6 +1,6 @@
-## about me
+## About me
 
-----
+
 
 |name|city|mail
 |----|----|---|
@@ -9,6 +9,6 @@
 
 ## TODO
 
-----
+
 
 - PLAN A BIG PLAN ...
