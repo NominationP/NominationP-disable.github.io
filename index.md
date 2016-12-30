@@ -1,13 +1,10 @@
-## About me
+# About me
+
+### name: zhangzexiang
+### city: shanghai
+### mail: zhangze1029@gmail.com
 
 
-|name|city|mail|
-|----|----|---|
-|zhangze|shanghai|zhangze1029@gmail.com|
+# TODO
 
-
-## TODO
-
-
-
-- PLAN A BIG PLAN ...
+### PLAN A BIG PLAN ...
