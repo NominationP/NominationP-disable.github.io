@@ -19,7 +19,7 @@ description: > # this means to ignore newlines until "baseurl:"
     Everything that happens is perfectly destined
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-weibo_username: yibo
+facebook_username: Ze Zhang
 github_username:  NominationP
 
 # Build settings
