@@ -7,7 +7,6 @@ layout: page
 
 
 # TODO LIST
-
 ```
  PLAN A BIG PLAN ...(做完这些，你就可以养狗了 >.>)
 ```
@@ -15,8 +14,10 @@ layout: page
 
 ## Front end
 
-- [ ] [JavaScript教程](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000){:target="_blank"}
-- [ ] [jQuery教程](http://w3school.com.cn/jquery/index.asp){:target="_blank"}
+|plan|date|info|
+|----|------|------|
+|[ ] [JavaScript教程](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000){:target="_blank"}|2016.01.07|until underscore|
+|[ ] [jQuery教程](http://w3school.com.cn/jquery/index.asp){:target="_blank"}|||
 
 ## Rear end
 
