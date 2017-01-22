@@ -1,13 +1,11 @@
 # Site wide configuration
 
-title: "Yibo's Blog"
-description: "Everything that happens is perfectly destined"
-logo: rubik_cube.jpg # 120x120 px default image used for Twitter summary card
+title: "cenalulu's Tech Blog"
+description: "Collection of everythings I want to record down especially for tech"
+logo: logo.jpg # 120x120 px default image used for Twitter summary card
 teaser: /teaser/default.jpg # 400x250 px default teaser image used in image archive grid
 locale:
 url:
-check_box: '<i class="fa fa-check-square-o">'
-blank_box: '<i class="fa fa-square-o">'
 
 default:
     -
@@ -15,7 +13,7 @@ default:
             type: "article"
         values:
             ads: false
-            toc: false
+            toc: false 
 
 
 # Jekyll configuration
@@ -33,17 +31,16 @@ gems:
 
 
 # Site owner
-owner:
-  name: Zhangze
-  email: zhangze1029@gmail.com
-  twitter:
+owner: 
+  name: cenalulu(卢钧轶)
+  email: cenalulu@gmail.com
+  twitter: cenalulu
   google:
-    ad-client:
-    ad-slot:
-  bio:
-  avatar: rubik_cube.jpg # 160x160 px image for author byline
-disqus-shortname: yibo
+    ad-client: "ca-pub-5984522345984184"
+    ad-slot: "9439014959"
+  bio: 
+  avatar: logo.jpg # 160x160 px image for author byline
+disqus-shortname: cenalulu
 
-future: true
 
 exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]

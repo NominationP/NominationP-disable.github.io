@@ -2,29 +2,21 @@
 
 - title: Home
   url: /
-  excerpt:
-  image:
+  excerpt: 
+  image: 
 
-# - title: MySQL
-#   url: /mysql/
+- title: MySQL
+  url: /mysql/
 
-# - title: Linux
-#   url: /linux/
+- title: Linux
+  url: /linux/
 
-# - title: Python
-#   url: /python/
+- title: Python
+  url: /python/
 
-# - title: Jekyll
-#   url: /jekyll/
-
-# - title: About Me
-#   url: /about/
-
-- title: Todo
-  url: /todo/
-
-- title: Work_Log
-  url: /work_record/
+- title: Jekyll
+  url: /jekyll/
 
 - title: About Me
   url: /about/
+
