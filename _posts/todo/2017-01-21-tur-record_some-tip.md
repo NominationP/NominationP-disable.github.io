@@ -17,17 +17,18 @@ date: 2017-01-21T14:51:15+08:00
 ## code
 
 {% highlight c++ %}
-{% raw %}
+
 #include <iostream>
 int main(){
     cout<<1;
 }
-{% endraw %}
+
 {% endhighlight %}
+
 {% highlight bash %}
-{% raw %}
+
 gem install jekyll
-{% endraw %}
+
 {% endhighlight %}
 
 
