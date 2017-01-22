@@ -1,5 +1,5 @@
 ---
-layout: not_back
+layout: article
 title: "Goods Catgory"
 modified:
 categories: work_record
