@@ -1,16 +1,20 @@
 ---
-layout: page
-title: About me
+layout: article
+title: About
 permalink: /about/
 ---
 
-**Zhangze**
+> Everything that happens is perfectly destined
 
-**Shanghai**
 
+
+`Zhangze` / **Shanghai**
+>[github]()
+email:`zhangze1029@gmail.com`
+qq: `605166577`
 
 ----------
->
+
 
 ### key words:
 ```
@@ -25,3 +29,4 @@ Movie
 Music
 
 ```
+

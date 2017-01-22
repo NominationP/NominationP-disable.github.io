@@ -1,32 +1,48 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# Site wide configuration
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Yibo
-email: zhangze@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-    Everything that happens is perfectly destined
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-facebook_username: Ze Zhang
-github_username:  NominationP
+title: "Yibo's Blog"
+description: "Everything that happens is perfectly destined"
+logo: rubik_cube.jpg # 120x120 px default image used for Twitter summary card
+teaser: /teaser/default.jpg # 400x250 px default teaser image used in image archive grid
+locale:
+url:
+check_box: '<i class="fa fa-check-square-o">'
+blank_box: '<i class="fa fa-square-o">'
 
-# Build settings
+default:
+    -
+        scope:
+            type: "article"
+        values:
+            ads: false
+            toc: false
+
+
+# Jekyll configuration
+
+sass:
+    sass_dir: _sass
+    style: compressed
+permalink: /:categories/:title/
 markdown: kramdown
-theme: minima
+kramdown:
+    input: GFM
+highlighter: pygments
 gems:
-  - jekyll-feed
-exclude:
-  - Gemfile
-  - Gemfile.lock
+  - jekyll-sitemap
+
+
+# Site owner
+owner:
+  name: Zhangze
+  email: zhangze1029@gmail.com
+  twitter:
+  google:
+    ad-client:
+    ad-slot:
+  bio:
+  avatar: rubik_cube.jpg # 160x160 px image for author byline
+disqus-shortname: yibo
+
+
+exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]
