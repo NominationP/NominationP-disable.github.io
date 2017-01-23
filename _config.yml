@@ -1,11 +1,13 @@
 # Site wide configuration
 
-title: "cenalulu's Tech Blog"
+title: "Yibo's Blog"
 description: "Everything that happens is perfectly destined"
 logo: rubik_cube.jpg # 120x120 px default image used for Twitter summary card
 teaser: /teaser/default.jpg # 400x250 px default teaser image used in image archive grid
 locale:
 url:
+check_box: '<i class="fa fa-check-square-o">'
+blank_box: '<i class="fa fa-square-o">'
 
 default:
     -
