@@ -14,13 +14,20 @@ date: 2017-01-21T15:45:15+08:00
 ---
 >Goods Catgory Record
 
-## 工作进度
+##
 
+
+## 工作进度
+- brand
+    - yhd brand_id all null
+    - sn  brand_id 3848/3890 null
+    - jd_brand -->{ yhd_brand + ... }
 - php-java-bridge
-    - <i class="fa fa-check-square-o"> shengchengtong
-    - <i class="fa fa-check-square-o"> yufu(need to sub)
+    - {{site.check_box}} shengchengtong
+    - {{site.check_box}} yufu(need to sub)
+    - {{site.check_box}} ***...(putian)
 - 商品目录分类
-    已经完成90％
+    已经完成96％
     以下是我的整体思路，以及工作进度
     如果有不合适的地方，请指出
 
