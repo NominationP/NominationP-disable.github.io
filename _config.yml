@@ -25,7 +25,8 @@ permalink: /:categories/:title/
 markdown: kramdown
 kramdown:
     input: GFM
-highlighter: pygments
+    syntax_highlighter: rouge
+rouge: pygments
 gems:
   - jekyll-sitemap
 
