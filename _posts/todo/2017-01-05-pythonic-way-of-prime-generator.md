@@ -40,6 +40,7 @@ categories: todo
 |{{site.check_box}} Animal Farm|||
 |{{site.check_box}} The Little Prince|||
 
+...
 
 ---
 
@@ -54,6 +55,6 @@ categories: todo
 [PHP和MySQL Web开发]: https://booreferencek.douban.com/subject/3549421/
 [laravel]:   http://laravelacademy.org/
 [php manual]:   https://secure.php.net/manual/zh/index.php
-[Leetcode]: http://localhost/leetcode/README.md
+[Leetcode]: https://github.com/NominationP/Leetcode_recrod/blob/master/README.md
 [OnlineJudge]: http://112.124.38.1/OnlineJudge/
-[spider_proxy_php]: h
+[spider_proxy_php]: https://github.com/NominationP/ph_proxy
