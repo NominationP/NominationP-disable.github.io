@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: pureread
 title: "work year sum"
 modified:
 categories: work_record

@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: pureread
 title: "Goods Catgory"
 modified:
 categories: work_record

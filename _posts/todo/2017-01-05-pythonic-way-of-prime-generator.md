@@ -40,7 +40,7 @@ categories: todo
 |{{site.check_box}} Animal Farm|||
 |{{site.check_box}} The Little Prince|||
 
-...
+[__`More`__](http://localhost:4000/todo/done/)
 
 ---
 

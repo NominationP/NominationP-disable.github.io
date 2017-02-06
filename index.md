@@ -18,6 +18,11 @@ image:
 
 <div class="tiles">
 {% for post in site.posts %}
-	{% include post-grid.html %}
+    {% if post.categories contains 'ban' %}
+    {% else %}
+	   {% include post-grid.html %}
+    {% endif %}
 {% endfor %}
 </div><!-- /.tiles -->
+
+
