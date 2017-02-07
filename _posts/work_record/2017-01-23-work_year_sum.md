@@ -1,7 +1,7 @@
 ---
 layout: pureread
 title: "work year sum"
-modified:
+modified: 2017-02-06T09:44:15+08:00
 categories: work_record
 #excerpt:
 tags: [work]
@@ -12,6 +12,7 @@ image:
 #  thumb:
 date: 2017-01-23T17:41:15+08:00
 ---
+
 >last work in year(china)
 
 ## 已完成 ：
@@ -33,10 +34,25 @@ date: 2017-01-23T17:41:15+08:00
     - ......
 
 
+## process
+
+1. category: by rule file change yhd/sn category data table (add attribute [jd_id])
+2. brand: sum all brand in a table ,brand_name --- jd_id --- sn_id --- yhd_id
+2. when add a new good ==> generate new brand && category ==> save
 
 
 
+update jd goods data find new goods
+username
+shengchengtong
 
+
+check jd_goods ====> add new good
+check my_goods ====> delete old good
+
+every time click goods ===> update price and caculate benefit if bad ---> cancel
+
+上海 上海市 普陀区 长征镇 真北路958号1号楼8楼 卡行者
 
 
 
