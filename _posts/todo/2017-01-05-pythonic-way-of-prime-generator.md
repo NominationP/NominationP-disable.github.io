@@ -32,13 +32,13 @@ categories: todo
 |{{site.check_box}} [OnlineJudge][OnlineJudge]{:target="_blank"}|||
 |{{site.check_box}} [spider_proxy_php][spider_proxy_php]{:target="_blank"}|||
 | **Book_tec**|
-|{{site.check_box}} C++ primer5|||
-|{{site.check_box}} Effective C++|||
-|{{site.check_box}} More Effective C++|||
-|{{site.check_box}} STL|||
+|{{site.check_box}} [C++ Primer 中文版（第 5 版）][C++ Primer 中文版（第 5 版）]{:target="_blank"}|||
+|{{site.check_box}} [Effective C++][Effective C++]{:target="_blank"}|||
+|{{site.check_box}} [More Effective C++（中文版）][More Effective C++（中文版）]{:target="_blank"}|||
+|{{site.check_box}} [Effective STL中文版][Effective STL中文版]{:target="_blank"}|||
 | **Other**|
-|{{site.check_box}} Animal Farm|||
-|{{site.check_box}} The Little Prince|||
+|{{site.check_box}} [Animal Farm][Animal Farm]{:target="_blank"}|||
+|{{site.check_box}} [The Little Prince][The Little Prince]{:target="_blank"}|||
 
 [__`More`__](https://nominationp.github.io/todo/done/)
 
@@ -58,3 +58,9 @@ categories: todo
 [Leetcode]: https://github.com/NominationP/Leetcode_recrod/blob/master/README.md
 [OnlineJudge]: http://112.124.38.1/OnlineJudge/
 [spider_proxy_php]: https://github.com/NominationP/ph_proxy
+[C++ Primer 中文版（第 5 版）]: https://book.douban.com/subject/25708312/
+[Effective C++]: https://book.douban.com/subject/1842426/
+[More Effective C++（中文版）]: https://book.douban.com/subject/5908727/
+[Effective STL中文版]: https://book.douban.com/subject/24534868/
+[Animal Farm]: https://book.douban.com/subject/1424313/
+[The Little Prince]: https://book.douban.com/subject/1370897/
