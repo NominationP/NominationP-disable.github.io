@@ -52,7 +52,6 @@ check my_goods ====> delete old good
 
 every time click goods ===> update price and caculate benefit if bad ---> cancel
 
-上海 上海市 普陀区 长征镇 真北路958号1号楼8楼 卡行者
 
 
 
