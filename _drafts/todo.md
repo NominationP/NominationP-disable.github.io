@@ -10,5 +10,8 @@
 
 https://github.com/cenalulu/cenalulu.github.io
 
+bundle exec jekyll serve
+
+
 
 
