@@ -4,7 +4,6 @@ title: "Goods Catgory"
 modified:
 categories: work_record
 #excerpt:
-tags: [work]
 toc: true
 image:
 #  feature:

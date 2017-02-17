@@ -4,7 +4,6 @@ title: "work year sum"
 modified: 2017-02-06T09:44:15+08:00
 categories: work_record
 #excerpt:
-tags: [work]
 toc: true
 image:
 #  feature:

@@ -4,7 +4,6 @@ title: "add goods process"
 modified: 2017.02.13
 categories: work_record
 #excerpt:
-tags: [work]
 toc: false
 image:
 #  feature:

@@ -4,7 +4,6 @@ title: "Jekyll MD Tip"
 modified:
 categories: todo
 #excerpt:
-tags: [tur, markdwon]
 toc: true
 image:
 #  feature:
