@@ -4,7 +4,7 @@ title: "tianmao interface && trans address"
 modified: 2017.02.21
 categories: work_record
 #excerpt:
-toc: false
+toc: fals
 image:
 #  feature:
     teaser: /teaser/gil.jpg
@@ -54,7 +54,7 @@ date: 2017-02-20T10:10:15+08:00
 - 目前想的用户操作方式：输入京东地址，旁边自动生成对应的一号店，苏宁地址，如果用户确认，点击确定，如果有疑虑，点击更多，会出现更多匹配结果，如果还不对，可以让用户自己选择（这种概率很低）。
 - 永久保存，不管哪个用户再用这个地址时，对应的结果可以放在隐藏菜单中，用户可以看到。
 - 在此过程中，加点趣味性的话语，比如：亲，你买的东西横跨3个商城，所以快确定一下对应的地址吧！ .....等等
-![新地址用户体验方式.png](/images/work_log/2017-2-20/%E6%96%B0%E5%9C%B0%E5%9D%80%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E6%96%B9%E5%BC%8F.png)
+![新地址用户体验方式.png](/images/work_log/2017-02-20/%E6%96%B0%E5%9C%B0%E5%9D%80%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E6%96%B9%E5%BC%8F.png)
 
 
 
@@ -69,17 +69,17 @@ date: 2017-02-20T10:10:15+08:00
 ##### 亚马逊
 - 选择一个地址，确认后，会给出相应提示
 
-![亚马逊](/images/work_log/2017-2-20/yamaxun.png)
+![亚马逊](/images/work_log/2017-02-20/yamaxun.png)
 
 
 ##### 淘宝
 - 选择地址的时候，会实时匹配
 
-![taobao_1](/images/work_log/2017-2-20/taobao_1.png)
+![taobao_1](/images/work_log/2017-02-20/taobao_1.png)
 
 - 旧地址需要改动时，也会给出匹配项
 
-![taobao_2](/images/work_log/2017-2-20/taobao_2.png)
+![taobao_2](/images/work_log/2017-02-20/taobao_2.png)
 
 
 
