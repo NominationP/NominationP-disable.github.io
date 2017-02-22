@@ -1,7 +1,7 @@
 ---
 layout: pureread
 title: "add goods process"
-modified: 2017.02.21
+modified: 2017.02.22
 categories: work_record
 #excerpt:
 toc: false
@@ -23,8 +23,8 @@ date: 2017-02-08T15:15:15+08:00
 
 - 三合一商品总数 : 32417
 - jd : 26929  >>>>if (rate>=0.03 && fenxiao_price>0.1)
-- sn : 3013
-- yhd : 2457
+- sn : 3013  >>>>if (fenxiao_price != 0)
+- yhd : 2457  >>>>if (fenxiao_price != 0)
 - 没有图片信息的商品个数 : 4632 (暂把 is_on_sale = 0)
 > /log/gallery_null.txt
 
@@ -51,9 +51,10 @@ date: 2017-02-08T15:15:15+08:00
 
 > ###### 存在问题
 
-- 没有充分利用接口
-- 重复调用
-- 扩展不方便 **（没有封装京东接口）**
+- jd没有充分利用接口
+- jd接口重复调用
+- jd扩展不方便 **（没有封装接口）**
+
 
 
 ##### jd更新商品流程图
@@ -72,14 +73,11 @@ date: 2017-02-08T15:15:15+08:00
 
 {% highlight c++ %}
 
-//goods_info :sn/yhd商品信息(原来的商品库中取的信息)
-include "add_new_goods.php";
+include "middle.php";
 $mt = new Meddle_trans;
-$re = $mt->sn_add_new_goods($goods_info);
-$re = $mt->yhd_add_new_goods($goods_info);
-if($re == 1){
-    print_r("ok"."\n");
-}
+$mt->update_sn_goods();
+$mt->update_yhd_goods();
+
 {% endhighlight %}
 
 
@@ -91,9 +89,9 @@ if($re == 1){
 middle_db.php
 update_price.php
 
-- [add new code](https://github.com/NominationP/work_goods_sum/tree/report/add_new_goods){:target="_blank"}
+- add new code
 
-> jd/sn/yhd add new goods , update_price
+> jd/sn/yhd add new goods , update_price ,  update sale
 
 
 
