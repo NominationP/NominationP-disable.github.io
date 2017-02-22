@@ -24,7 +24,7 @@ categories: todo
 |{{site.check_box}} [JavaScript教程][JavaScript教程]{:target="_blank"}|2017.01.07|until underscore|
 |{{site.check_box}} [jQuery教程][jQuery教程]{:target="_blank"}|2017.01.08|&& Asynchronous JavaScript and XML(ajax)|
 | `Rear end`{: style="color: red"}|
-|{{site.blank_box}} [High Performance MySQL 3rd][High Performance MySQL 3rd]{:target="_blank"}|||
+|{{site.blank_box}} [High Performance MySQL 3rd][High Performance MySQL 3rd]{:target="_blank"}|2017.02.22~~||
 |{{site.blank_box}} [php manual][php manual]{:target="_blank"}|||
 | `Some done`{: style="color: red"}|
 | **Project**|
