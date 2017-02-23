@@ -2,7 +2,10 @@
 layout: pureread
 title: "tianmao interface && trans address"
 modified: 2017.02.21
-categories: work_record
+category: work_record
+tag:
+- work
+
 #excerpt:
 toc: fals
 image:
@@ -47,7 +50,7 @@ date: 2017-02-20T10:10:15+08:00
 
 #### 现状
 - {{site.check_box}} JD->YHD，准确率非常高（待测）
-- {{site.blank_box}}  JD->SN，已经想好方法了，70%
+- {{site.blank_box}}  JD->SN，返回一级地址（通常为1-2），二级地址（10个左右）
 
 #### 用户体验
 - 这个最关键了，之前用淘宝，亚马逊的时候，选好地址，会突然弹出来几个自动生成的类似地址让用户选择，我们可以模仿它的方式

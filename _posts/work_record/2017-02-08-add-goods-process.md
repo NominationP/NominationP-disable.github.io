@@ -2,7 +2,10 @@
 layout: pureread
 title: "add goods process"
 modified: 2017.02.22
-categories: work_record
+category: work_record
+tag:
+- work
+
 #excerpt:
 toc: false
 image:

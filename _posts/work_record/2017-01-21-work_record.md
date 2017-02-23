@@ -2,7 +2,10 @@
 layout: pureread
 title: "Goods Catgory"
 modified:
-categories: work_record
+category: work_record
+tag:
+- work
+
 #excerpt:
 toc: true
 image:

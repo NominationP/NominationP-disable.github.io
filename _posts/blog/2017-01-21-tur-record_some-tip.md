@@ -2,7 +2,10 @@
 layout: article
 title: "Jekyll MD Tip"
 modified:
-categories: todo
+category: blog
+tag:
+- jekyll
+
 #excerpt:
 toc: true
 image:

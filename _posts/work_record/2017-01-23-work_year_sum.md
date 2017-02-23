@@ -2,7 +2,10 @@
 layout: pureread
 title: "work year sum"
 modified: 2017-02-06T09:44:15+08:00
-categories: work_record
+category: work_record
+tag:
+- work
+
 #excerpt:
 toc: true
 image:

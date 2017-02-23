@@ -1,0 +1,57 @@
+
+{% comment%}
+Here we generate all the tags.
+{% endcomment%}
+
+{% assign rawtags = "" %}
+{% for post in site.posts %}
+{% assign ttags = post.tags | join:'|' | append:'|' %}
+{% assign rawtags = rawtags | append:ttags %}
+{% endfor %}
+
+{% assign rawtags = rawtags | split:'|' | sort %}
+
+{% assign tags = "" %}
+
+{% for tag in rawtags %}
+{% if tag != "" %}
+
+{% if tags == "" %}
+{% assign tags = tag | split:'|' %}
+{% endif %}
+
+{% unless tags contains tag %}
+{% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
+{% endunless %}
+{% endif %}
+{% endfor %}
+
+
+<h1>tags</h1>
+
+<!-- <h1 class="page-title">
+  <a href="/blog">Blog</a> | {{ page.title }}
+</h1> -->
+<!-- <br/> -->
+
+<div class="posts">
+
+{% for tag in tags %}
+
+<!-- count tag size -->
+{% assign tags_size = 0 %}
+{% for post in site.posts %}
+  {% if post.tags contains tag %}
+  {% assign tags_size = tags_size | plus:1 %}
+  {% endif %}
+{% endfor %}
+<!-- count tag size -->
+
+<a href="/blog/tag/#{{ tag | slugify }}" target="_blank" class="post-tag"><font color="grey">{{ `tag` }} </font> ({{ `tags_size` }})</a> &nbsp;&nbsp;
+{% endfor %}
+
+
+
+
+
+</div>

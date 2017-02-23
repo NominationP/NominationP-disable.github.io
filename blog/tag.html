@@ -1,0 +1,75 @@
+---
+layout:   article
+title:    Tag
+permalink: /blog/tag/
+showtag : false
+---
+{% comment%}
+Here we generate all the tags.
+{% endcomment%}
+
+{% assign rawtags = "" %}
+{% for post in site.posts %}
+{% assign ttags = post.tags | join:'|' | append:'|' %}
+{% assign rawtags = rawtags | append:ttags %}
+{% endfor %}
+
+{% assign rawtags = rawtags | split:'|' | sort %}
+
+{% assign tags = "" %}
+
+{% for tag in rawtags %}
+{% if tag != "" %}
+
+{% if tags == "" %}
+{% assign tags = tag | split:'|' %}
+{% endif %}
+
+{% unless tags contains tag %}
+{% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
+{% endunless %}
+{% endif %}
+{% endfor %}
+
+
+
+
+<!-- <h1 class="page-title">
+  <a href="/blog">Blog</a> | {{ page.title }}
+</h1> -->
+<!-- <br/> -->
+
+<div class="posts">
+
+{% for tag in tags %}
+
+<!-- count tag size -->
+{% assign tags_size = 0 %}
+{% for post in site.posts %}
+  {% if post.tags contains tag %}
+  {% assign tags_size = tags_size | plus:1 %}
+  {% endif %}
+{% endfor %}
+<!-- count tag size -->
+
+<a href="#{{ tag | slugify }}" class="codinfox-tag-mark post-tag"><U><font color="grey">{{ `tag` }} </font> ({{ `tags_size` }}</U>)</a> &nbsp;&nbsp;
+{% endfor %}
+
+<ul class="listing">
+{% for tag in tags %}
+<h4 class="listing-seperator" id="{{ tag | slugify }}">{{ tag }}</h4>
+  {% for post in site.posts %}
+  {% if post.tags contains tag %}
+  <li class="listing-item">
+  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+  <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}"><font color="red">{{ `post.title` }}</font></a>
+
+  </li>
+  {% endif %}
+  {% endfor %}
+{% endfor %}
+</ul>
+
+
+
+</div>
