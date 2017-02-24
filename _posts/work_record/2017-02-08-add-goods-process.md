@@ -50,6 +50,9 @@ date: 2017-02-08T15:15:15+08:00
     - 在更新价格时，如果利润率低于0.03，下架
     - 更新推送接口商品的上下架
     - 更新三合一商城中所有下架的京东商品（考虑到价格改变自动下架的商品）
+-  **sn_detail**
+[More](https://nominationp.github.io/work_record/add_goods_process_2/)
+
 
 
 > ###### 存在问题
