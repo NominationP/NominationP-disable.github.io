@@ -15,6 +15,14 @@ layout: default
 		{% include breadcrumbs.html %}
 		<div class="page-title">
 			<h1>{{ page.title }}</h1>
+        <span class="post-date"> {{page.date}} </span>
+
+                &nbsp;&nbsp;
+
+        {% for tag in page.tags %}
+        <a href="/blog/tag/#{{ tag | slugify }}" target="_blank" class="post-tag"><font color="grey">{{ `tag` }} </font></a> &nbsp;
+        {% endfor %}
+
 		</div>
 		<div class="inner-wrap">
 
@@ -37,7 +45,11 @@ layout: default
         -->
 		<!-- <div class="ads">{% include about-me.html %}</div> -->
 
+<div class="float" id="float">
         <div class="toc"></div>
+        </div>
+
+
         {% if page.showtag != false %}
         <div>{% include tag.html %}</div>
         {% endif %}
@@ -66,5 +78,41 @@ layout: default
       s.parentNode.insertBefore(hm, s);
     })();
     </script>
+
+    <script>
+$.fn.smartFloat = function() {
+    var position = function(element) {
+        var top = element.position().top, pos = element.css("position");
+        $(window).scroll(function() {
+            var scrolls = $(this).scrollTop();
+            if (scrolls > top) {
+                if (window.XMLHttpRequest) {
+                    element.css({
+                        position: "fixed",
+                        top: 0
+                    });
+                } else {
+                    element.css({
+                        top: scrolls
+                    });
+                }
+            }else {
+                element.css({
+                    position: "absolute",
+                    top: top
+                });
+            }
+        });
+    };
+    return $(this).each(function() {
+        position($(this));
+    });
+};
+
+//绑定
+$("#float").smartFloat();
+    </script>
+
+
 {% endif %}
 

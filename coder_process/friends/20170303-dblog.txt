@@ -1,0 +1,12 @@
+2017-03-03 00:08:11:   Error 1064   You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'count * from list where season =  and episode =' at line 1
+ sql:   count * from list where season =  and episode = 
+2017-03-03 00:08:38:   Error 1064   You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'count * from list where season = 1 and episode = 20' at line 1
+ sql:   count * from list where season = 1 and episode = 20
+2017-03-03 00:12:16:   Error 1054   Unknown column '罪恶的牙医' in 'field list'
+ sql:   insert into list
+                (`season`, `episode`, `title`, `role`, `part_num`, `words_num`) VALUES
+                (1,20,罪恶的牙医,ra,0,0)
+2017-03-03 00:13:09:   Error 1054   Unknown column 'ra' in 'field list'
+ sql:   insert into list
+                (`season`, `episode`, `title`, `role`, `part_num`, `words_num`) VALUES
+                (1,20,'罪恶的牙医',ra,0,0)

@@ -1,0 +1,14 @@
+2017-03-05 12:10:48:   Error 1064   You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''name','words','words_num','is_chinese') value ('Chandler','I can\'t believe you' at line 1
+ sql:   insert into detail ('name','words','words_num','is_chinese') value ('Chandler','I can\'t believe you\'d actually say that.','7','0')
+2017-03-05 12:41:47:   Error 1064   You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''name','words','words_num','is_chinese') value ('Chandler','I can\'t believe you' at line 1
+ sql:   insert into detail ('name','words','words_num','is_chinese') value ('Chandler','I can\'t believe you\'d actually say that.','7','0')
+2017-03-05 12:42:16:   Error 1064   You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''name','words','words_num','is_chinese') value ('Chandler','I can\'t believe you' at line 1
+ sql:   insert into detail ('name','words','words_num','is_chinese') value ('Chandler','I can\'t believe you\'d actually say that.','7','0')
+2017-03-05 12:44:56:   Error 1064   You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''line','name','words','words_num','is_chinese') value ('21','Chandler','I can\'t' at line 1
+ sql:   insert into detail ('line','name','words','words_num','is_chinese') value ('21','Chandler','I can\'t believe you\'d actually say that.','7','0')
+2017-03-05 12:47:28:   Error 1064   You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''line','name','words','words_num','is_chinese') value ('21','Chandler','I can\'t' at line 1
+ sql:   insert into detail ('line','name','words','words_num','is_chinese') value ('21','Chandler','I can\'t believe you\'d actually say that.','7','0')
+2017-03-05 12:48:34:   Error 1064   You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''line','name','words','words_num','is_chinese') values ('21','Chandler','I can\'' at line 1
+ sql:   insert into detail ('line','name','words','words_num','is_chinese') values ('21','Chandler','I can\'t believe you\'d actually say that.','7','0')
+2017-03-05 22:59:04:   Error 1064   You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ sql:   update  detail set `line`='21',`name`='Chandler',`words`='I can\'t believe you\'d actually say that.',`words_num`='7',`is_chinese`='0',

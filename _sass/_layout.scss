@@ -489,3 +489,36 @@
 		}
 	}
 }
+
+
+// ASIDE
+// --------------------------------------------------
+
+#div1{
+
+  float:right;
+}
+
+.related {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-top: 1px solid #eee;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(238, 238, 238);
+}
+
+.related-posts {
+    padding-left: 0;
+    list-style: none;
+    list-style-type: none;
+    list-style-position: initial;
+    list-style-image: initial;
+}
+
+.post-date {
+    display: inline-block;
+    margin-top: -.5rem;
+    margin-bottom: 1rem;
+    color: #9a9a9a;
+}

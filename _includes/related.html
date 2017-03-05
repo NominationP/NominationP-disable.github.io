@@ -1,0 +1,22 @@
+
+<div class="related">
+
+<h4>You May Also Enjoy</h4>
+
+
+{% assign pageTag = page.tags %}
+
+<ul class="related-posts">
+  {% for post in site.posts %}
+
+    {% if post.tags contains "work" %}
+    <div>
+    <h5><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}{{ commonTags }}</a></h5>
+    </div>
+    {% endif %}
+
+  {% endfor %}
+</ul>
+
+
+</div>
