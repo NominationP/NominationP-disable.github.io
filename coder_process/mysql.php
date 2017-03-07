@@ -103,13 +103,14 @@ class Mysql {
 
     function smart_up($table_name,$attr,$condition){
 
+        $condition_ex = $condition;
         $condition = $this->arr_sql_select($table_name,$condition);
-        // print_r($condition);
+
 
         if($condition == null){
             $this->arr_sql_insert($table_name,$attr);
         }else{
-            $this->arr_sql_update($table_name,$attr);
+            $this->arr_sql_update($table_name,$attr,$condition_ex);
         }
 
     }
@@ -122,10 +123,10 @@ class Mysql {
                 $value = addcslashes($value,'\'');
             }
             # code...
-            $sql .= "`".$key."`".'='."'".$value."'".",";
+            $sql .= "`".$key."`".'='."'".$value."'"."and";
         }
         $sql = "select * from $table_name where $sql";
-        $sql = rtrim($sql,',');
+        $sql = rtrim($sql,'and');
         $re = $this->select($sql);
         return $re;
     }
@@ -145,11 +146,15 @@ class Mysql {
         $value = rtrim($value,",");
 
         $sql_insert = "insert into $table_name ($attribute) values ($value)";
+
         $this->insert($sql_insert);
     }
-    function arr_sql_update($table_name,$attr){
+    function arr_sql_update($table_name,$attr,$condition){
 
         $sql = "";
+        $where = "";
+
+        /*update attribute*/
         foreach ($attr as $key => $value) {
             # code...
             if(preg_match("/[']/", $value)){
@@ -157,10 +162,21 @@ class Mysql {
             }
             $sql .= "`".$key."`".'='."'".$value."'".",";
         }
-        $sql = rtrim($sql,",");
 
-        $sql_insert = "update  $table_name set $sql";
-        print_r($sql_insert);
+        /*condition*/
+        foreach ($condition as $key => $value) {
+            # code...
+
+            if(preg_match("/[']/", $value)){
+                $value = addcslashes($value,'\'');
+            }
+            $where .= "`".$key."`".'='."'".$value."'"."and";
+        }
+
+        $sql = rtrim($sql,",");
+        $where = rtrim($where,"and");
+
+        $sql_insert = "update  $table_name set $sql where $where";
         $this->alter($sql_insert);
     }
 

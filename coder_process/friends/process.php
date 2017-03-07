@@ -4,7 +4,7 @@ include_once("../mysql.php");
 class Cut_pr{
 
     public $file_root;
-    public $Season , $Episode , $title , $role , $part;
+    public $Season , $Episode , $title , $role , $part , $words_num;
     public $db,$db_friend;
 
     function __construct($file_root="/var/www/html/NominationP.github.io/_posts/blog/2017-02-22-friends-0120.md"){
@@ -27,8 +27,9 @@ class Cut_pr{
     function run(){
 
         $this->get_Sea_Epi_til_rol();
-        // $this->set_db_Sea_Epi_til_rol();
         $this->collect();
+        $this->set_db_Sea_Epi_til_rol();
+
         // $this->trasn_big();
     }
 
@@ -65,18 +66,52 @@ class Cut_pr{
         }
     }
 
+    /**
+     * [set_db_Sea_Epi_til_rol description] set list table
+     */
     public function set_db_Sea_Epi_til_rol(){
 
-        $sql = "select * from list where season = $this->Season and episode = $this->Episode";
-        $check_exist = $this->db_friend->select($sql);
-        if($check_exist == null){
-            $sql = "insert into list
-                (`season`, `episode`, `title`, `role`, `part_num`, `words_num`) VALUES
-                ($this->Season,$this->Episode,'$this->title','$this->role',0,0)";
-            $this->db_friend->alter($sql);
+        $sql_words = "select words_num from detail";
+        $sum_words = $this->db_friend->select($sql_words);
+        $words_num = 0;
+        foreach ($sum_words as $key => $value) {
+            # code...
+            $words_num += $value['words_num'];
         }
+        $this->words_num = $words_num;
+
+        $attr = array(
+            'season' => $this->Season,
+            'episode' => $this->Episode,
+            'title' => $this->title,
+            'role' => $this->role,
+            'part_num' => $this->part,
+            'words_num' => $this->words_num,
+            );
+
+        $condition = array(
+            'season' => $this->Season,
+            'episode' => $this->Episode,
+            );
+
+        $table_name = 'list';
+
+        $this->db_friend->smart_up($table_name,$attr,$condition);
+
+        // $sql = "select * from list where season = $this->Season and episode = $this->Episode";
+        // $check_exist = $this->db_friend->select($sql);
+        // if($check_exist == null){
+        //     $sql = "insert into list
+        //         (`season`, `episode`, `title`, `role`, `part_num`, `words_num`) VALUES
+        //         ($this->Season,$this->Episode,'$this->title','$this->role',0,0)";
+        //     $this->db_friend->alter($sql);
+        // }
     }
 
+    /**
+     * collect info && set to detail table
+     * @return [type] [description]
+     */
     public function collect(){
 
         if ($file = fopen($this->file_root, "r")) {

@@ -1,0 +1,32 @@
+2017-03-06 00:16:22:   Error 1054   Unknown column '0' in 'where clause'
+ sql:   update  detail set `line`='21',`name`='Chandler',`words`='I can\'t believe you\'d actually say that.',`words_num`='7',`is_chinese`='0',`season`='1',`episode`='20' where `0`='Array'
+2017-03-06 00:16:22:   Error 1054   Unknown column '0' in 'where clause'
+ sql:   update  detail set `line`='22',`name`='Chandler',`words`='I\'d much rather be Mr.Peanut than Mr.Salty 我不是咸味先生而是花豆先生
+ ',`words_num`='7',`is_chinese`='1',`season`='1',`episode`='20' where `0`='Array'
+2017-03-06 00:16:22:   Error 1054   Unknown column '0' in 'where clause'
+ sql:   update  detail set `line`='24',`name`='Joey',`words`='No way. Mr.Salty is a sailor 水手',`words_num`='6',`is_chinese`='1',`season`='1',`episode`='20' where `0`='Array'
+2017-03-06 00:16:22:   Error 1054   Unknown column '0' in 'where clause'
+ sql:   update  detail set `line`='25',`name`='Joey',`words`='He\'s gotta be the toughest snack there is 最坚硬的点心
+ ',`words_num`='8',`is_chinese`='1',`season`='1',`episode`='20' where `0`='Array'
+2017-03-06 00:16:22:   Error 1054   Unknown column '0' in 'where clause'
+ sql:   update  detail set `line`='27',`name`='Ross',`words`='I don\'t know. You don\'t wanna mess with Cornnuts 和玉米作对',`words_num`='9',`is_chinese`='1',`season`='1',`episode`='20' where `0`='Array'
+2017-03-06 00:16:22:   Error 1054   Unknown column '0' in 'where clause'
+ sql:   update  detail set `line`='28',`name`='Ross',`words`='they\'re crazy
+ ',`words_num`='2',`is_chinese`='0',`season`='1',`episode`='20' where `0`='Array'
+2017-03-06 00:16:22:   Error 1054   Unknown column '0' in 'where clause'
+ sql:   update  detail set `line`='30',`name`='Monica',`words`='Oh,my God. You gotta come see this',`words_num`='7',`is_chinese`='0',`season`='1',`episode`='20' where `0`='Array'
+2017-03-06 00:16:22:   Error 1054   Unknown column '0' in 'where clause'
+ sql:   update  detail set `line`='31',`name`='Monica',`words`='There\'s some creep out there with a telescope 变态
+ ',`words_num`='8',`is_chinese`='1',`season`='1',`episode`='20' where `0`='Array'
+2017-03-06 00:16:22:   Error 1054   Unknown column '0' in 'where clause'
+ sql:   update  detail set `line`='33',`name`='Ross',`words`='I can\'t believe is. He\'s looking right at us',`words_num`='9',`is_chinese`='0',`season`='1',`episode`='20' where `0`='Array'
+2017-03-06 00:16:22:   Error 1054   Unknown column '0' in 'where clause'
+ sql:   update  detail set `line`='35',`name`='Phoebe',`words`='Oh, that is so sick',`words_num`='5',`is_chinese`='0',`season`='1',`episode`='20' where `0`='Array'
+2017-03-06 00:16:22:   Error 1054   Unknown column '0' in 'where clause'
+ sql:   update  detail set `line`='37',`name`='Chandler',`words`='I feel violated',`words_num`='3',`is_chinese`='0',`season`='1',`episode`='20' where `0`='Array'
+2017-03-06 00:31:01:   Error 1064   You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ sql:   select * from list where 
+2017-03-06 00:31:55:   Error 1064   You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`episode`='20'' at line 1
+ sql:   select * from list where `season`='1',`episode`='20'
+2017-03-06 00:33:59:   Error 1064   You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`episode`='20'' at line 1
+ sql:   select * from list where `season`='1',`episode`='20'
