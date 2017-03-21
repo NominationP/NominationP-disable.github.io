@@ -45,19 +45,59 @@ date: 2017-03-13
 
 `所有商品接口`
 
-```
-参数：null
-返回：array() 【所有商品的ID】
-```
+- URL: https://shop.shanghai.com.cn/api/allgoods
+- HTTPS请求方式：POST
+- 请求参数
+
+| 参数名称        | 参数选项| 意义  |
+|:------------- |:----|:-----|
+| Sign          | 必须 | 公钥加密字符串 |
+|       | 必须 |   $12 |
+| zebra stripes | 必须 |    $1 |
 
 - 新增商品接口（商品总量小可忽略）
 
 `商品详情接口`
 
-```
-参数：goods_id 【商品ID】
-返回：array() 【ID，价格，分类(array())，品牌(array())，上下架状态】
-```
+- URL: https://shop.shanghai.com.cn/api/goods_detail
+- HTTPS请求方式：POST
+- 请求参数
+
+| 参数名称        | 参数选项| 意义  |
+|:------------- |:----|:-----|
+| Sign     | 必须 | 公钥加密字符串 |
+| sku      | 必须 | 商品编号，只支持单个查询|
+
+- 请求实例
+
+{% highlight json %}
+{
+    "Sign":"f43f3efr4f4f3667yyrg5h",
+    "sku" :"304844"
+}
+{% endhighlight %}
+
+- 返回结果
+
+{% highlight json %}
+{
+    "result":{
+                "resultCode"    :400,
+                "success"       :false,
+                "resultMessage" :"失败原因"
+            },
+    "detail":{
+                "sku"    : "1023433",
+                "name"   : "XXXXXXXX",
+                "number" : "201",
+                "weight" : "1.02",
+                "price"  : "20.4",
+                "img"    : "https://www.shop.shanghai.com.cn/api/graph/...",
+                "status" : "1",
+                "desc"   : "XXXXXXXX",
+            }
+}
+{% endhighlight %}
 
 `商品图片接口（批量）`
 
