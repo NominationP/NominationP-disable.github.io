@@ -12,9 +12,11 @@
     {% if author.google.plus %}<link rel="author" href="https://plus.google.com/{{ author.google.plus }}"/>{% endif %}
     {% include page-meta.html %}
 
-                {% if page.toc %}
-          <nav class="toc"></nav><!-- /.toc -->
-                {% endif %}
+
+
+        <div class="float" id="float">
+        <div class="toc"></div>
+        </div>
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
 
@@ -65,7 +67,7 @@
       </aside>
 
       {% include footer.html %}
-    </div>z
+    </div>
 
     <script src="{{ site.url }}/js/vendor/jquery-1.9.1.min.js"></script>
     <script src="{{ site.url }}/js/main.js"></script>
