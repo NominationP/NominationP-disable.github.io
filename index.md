@@ -18,7 +18,7 @@ image:
 
 <div class="tiles">
 {% for post in site.posts %}
-    {% if post.categories contains 'ban' %}
+    {% if post.categories contains 'work_record' or post.categories contains 'test' %}
     {% else %}
 	   {% include post-grid.html %}
     {% endif %}
