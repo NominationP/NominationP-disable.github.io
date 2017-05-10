@@ -9,7 +9,7 @@ tag:
 toc: flase
 image:
 #  feature:
-    teaser: /blog/2017.05.09/lemp-ubuntu.jpg
+    teaser: /blog/2017.05.09/nginx-1.png
 #  thumb:
 date:   2017-05-09 17:05
 modified: 2017-05-09 17:05
