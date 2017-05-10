@@ -22,14 +22,17 @@ modified: 2017-05-09 17:05
 
 >change 1.10.0 to 1.10.3 is ok !
 
-https://www.tecmint.com/install-nginx-in-centos-7/
+
+[Install and Compile “Nginx 1.10.0” (Stable Release) from Sources in RHEL/CentOS 7.0](https://www.tecmint.com/install-nginx-in-centos-7/){:target="_blank"}
 
 ## php5.6
 
-https://webtatic.com/packages/php56/
+
+[How to Upgrade PHP version 5.4 to 5.6 on CentOS/RHEL 6/7](http://www.techoism.com/how-to-upgrade-php-version-5-4-to-5-6-on-centosrhel/){:target="_blank"}
 +
-yun install php56w-mysql
+reboot ...
 
 ## mysql5.6
 
-https://dbahire.com/how-to-install-mysql-5-6-on-centos-7/
+
+[How to install MySQL 5.6 on CentOS 7](https://dbahire.com/how-to-install-mysql-5-6-on-centos-7/){:target="_blank"}
