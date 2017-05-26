@@ -17,6 +17,7 @@ modified: 2017-05-09 17:05
 >record
 
 >ningx1.10.3 not full . could leave message !
+>nginx and php-fpm need to start if reboot or ... set it!!! 
 
 ## ningx1.10.3
 
@@ -31,6 +32,11 @@ modified: 2017-05-09 17:05
 [How to Upgrade PHP version 5.4 to 5.6 on CentOS/RHEL 6/7](http://www.techoism.com/how-to-upgrade-php-version-5-4-to-5-6-on-centosrhel/){:target="_blank"}
 +
 reboot ...
+
+## php56-fpm
+
+[PHP-FPM 5.6 Installation/Upgrade Procedure](https://geekflare.com/install-upgrade-php-fpm-5-6-on-centos-6/}
+
 
 ## mysql5.6
 
