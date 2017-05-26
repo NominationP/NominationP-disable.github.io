@@ -35,7 +35,7 @@ reboot ...
 
 ## php56-fpm
 
-[PHP-FPM 5.6 Installation/Upgrade Procedure](https://geekflare.com/install-upgrade-php-fpm-5-6-on-centos-6/}
+[PHP-FPM 5.6 Installation/Upgrade Procedure](https://geekflare.com/install-upgrade-php-fpm-5-6-on-centos-6/){:target="_blank"}
 
 
 ## mysql5.6
