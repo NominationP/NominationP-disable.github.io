@@ -29,13 +29,11 @@ modified: 2017-05-26 16:16
 ## php5.6
 
 
-[How to Upgrade PHP version 5.4 to 5.6 on CentOS/RHEL 6/7](http://www.techoism.com/how-to-upgrade-php-version-5-4-to-5-6-on-centosrhel/){:target="_blank"}
+[How to Upgrade PHP version 5.4 to 5.6 on CentOS/RHEL 6/7](https://snippetinfo.net/mobile/media/1643){:target="_blank"}
 +
-reboot ...
+terminal input : php-fpm
 
-## php56-fpm
 
-[PHP-FPM 5.6 Installation/Upgrade Procedure](https://geekflare.com/install-upgrade-php-fpm-5-6-on-centos-6/){:target="_blank"}
 
 
 ## mysql5.6
