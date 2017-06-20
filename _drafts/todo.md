@@ -12,6 +12,7 @@ https://github.com/cenalulu/cenalulu.github.io
 
 bundle exec jekyll serve
 
+http://localhost:4000/
 
 cover : 400*250
 
