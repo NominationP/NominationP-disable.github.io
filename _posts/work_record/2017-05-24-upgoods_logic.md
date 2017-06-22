@@ -22,4 +22,3 @@ date: 2017.05.24
 
 
 ![logic](/images/work_log/2017-05-24/upgoods_inter.png)
-
