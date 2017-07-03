@@ -16,5 +16,8 @@ date: 2017.07.03
 ---
 
 
+![logic](/images/work_log/2017-07-03/未命名文件 (1).png)
+
+
 ![logic](/images/work_log/2017-07-03/shop_regular.png)
 
