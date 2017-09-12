@@ -3,7 +3,9 @@ layout: article
 title: "EasyWechat Laravel Docker 遇到的坑"
 category: blog
 tag:
-- openSource
+- easywecaht 
+- laravel
+- docker
 
 #excerpt:
 toc: flase
