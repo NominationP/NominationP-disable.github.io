@@ -9,12 +9,13 @@ tag:
 toc: flase
 image:
 #  feature:
-    teaser: /blog/2017.06.15/image.jpg
+    teaser: /blog/2017.09.11/q0W90_v9.jpg
 #  thumb:
 date:   2017-09-11 10:44
 modified: 2017-09-11 10:44
 ---
 
+> 端口，laravel VerifyCsrfToken， laravel日志
 
 
 ### 端口问题，必须是80端口
