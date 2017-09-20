@@ -93,6 +93,13 @@ Route::any("/server", 'Wechat@server')->name('server');
 ```
 
 
+### up 2017-09-20 今天又配了一次，疏忽了一点
+
+route 需要 any !!! not get or post ....
+
+```
+Route::any('/server', 'Wechat_tl@server')->name('server_tl');
+```
 
 
 
