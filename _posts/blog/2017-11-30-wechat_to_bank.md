@@ -9,7 +9,7 @@ tag:
 toc: flase
 image:
 #  feature:
-    teaser: /blog/2017.11.30/WeChat-Logo_中英_195.png
+    teaser: /blog/2017.11.30/flow3.png
 #  thumb:
 date:   2017-11-30 15:54
 modified: 2017-11-30 15:54
