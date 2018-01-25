@@ -8,3 +8,4 @@ gem 'bourbon'
 gem 'neat'
 gem 'octopress', '~> 3.0.0.rc.12'
 gem "json", "2.0.2"
+gem "yajl-ruby ~> 1.3.1"
