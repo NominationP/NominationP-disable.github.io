@@ -22,6 +22,7 @@ modified: 2018-05-01 10:53
 > Read a lot books, although I realized forget any time, and try to hard work to log some thing, such as word,txt,write-notebook,read-twice (allmost all book ) But,it doesn't work too much. 
 >
 > 1 I never use this in practice
+> 
 > 2 I never output this , just out to notebook... It is a pity that not mean Output
 >
 > In terms of all notes of mine, It's hard to Summary some thing after all the book is essence. So I don't Summary, Just **restore** and **repetition** key works,just chain all key-words in my mind when I look again and detail it in transcript
