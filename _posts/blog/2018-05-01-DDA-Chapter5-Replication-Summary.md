@@ -9,7 +9,7 @@ tag:
 toc: flase
 image:
 #  feature:
-    teaser:/blog/2018.05/xKFo7wS.png
+    teaser: /blog/2018.05/xKFo7wS.png
 #  thumb:
 date:   2018-05-01 10:53
 modified: 2018-05-01 10:53
