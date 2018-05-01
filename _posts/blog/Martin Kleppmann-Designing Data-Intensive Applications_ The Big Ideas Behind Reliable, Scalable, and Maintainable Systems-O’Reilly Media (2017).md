@@ -1,4 +1,22 @@
-﻿# Annotation Summary of Martin Kleppmann-Designing Data-Intensive Applications_ The Big Ideas Behind Reliable, Scalable, and Maintainable Systems-O’Reilly Media (2017).pdf.
+﻿---
+layout: article
+title: "DDA_Translate_Log_update"
+category: blog
+tag:
+- DDA 
+- english
+
+#excerpt:
+toc: flase
+image:
+#  feature:
+    teaser: /blog/2018.05/51PjhtI9VRL._SX379_BO1,204,203,200_.jpg
+#  thumb:
+date:   2018-05-01 14:00
+modified: 2018-05-01 14:00
+---
+
+# Annotation Summary of Martin Kleppmann-Designing Data-Intensive Applications_ The Big Ideas Behind Reliable, Scalable, and Maintainable Systems-O’Reilly Media (2017).pdf.
 #### Chapter 5. Replication
  *Highlight [151]:* single-leader
 
