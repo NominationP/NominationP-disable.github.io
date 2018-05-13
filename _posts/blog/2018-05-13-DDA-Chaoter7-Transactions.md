@@ -18,7 +18,9 @@ date:   2018-05-13 11:28
 # DDA_Chapter7 Transactions Summary
 
 
-![two](/images/blog/2018.05/Martin Kleppmann-Designing Data-Intensive Applications_ The Big Ideas Behind Reliable, Scalable, and Maintainable Systems-O’Reilly Media (2017) pages 266, 267)
+![one](/images/blog/2018.05/Martin Kleppmann-Designing Data-Intensive Applications_ The Big Ideas Behind Reliable, Scalable, and Maintainable Systems-O’Reilly Media (2017) pages 266, 267-1.jpg)
+
+![two](/images/blog/2018.05/Martin Kleppmann-Designing Data-Intensive Applications_ The Big Ideas Behind Reliable, Scalable, and Maintainable Systems-O’Reilly Media (2017) pages 266, 267-2.jpg)
 
 
 
