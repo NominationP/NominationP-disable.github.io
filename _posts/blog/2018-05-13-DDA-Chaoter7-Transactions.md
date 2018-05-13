@@ -10,7 +10,7 @@ tag:
 toc: flase
 image:
 #  feature:
-    teaser: /blog/2018.05/artboard_1x.png
+    teaser: /blog/2018.05/v2-d7fdf141526cf835fb3db39cc9c9d1ff_1200x500.jpg
 #  thumb:
 date:   2018-05-13 11:28
 ---
