@@ -20,9 +20,7 @@ date:   2018-05-13 11:28
 
 ![one](/images/blog/2018.05/Martin Kleppmann-Designing Data-Intensive Applications_ The Big Ideas Behind Reliable, Scalable, and Maintainable Systems-O’Reilly Media267-1.jpg)
 
-![two](/images/blog/2018.05/Martin Kleppmann-Designing Data-Intensive Applications_ The Big Ideas Behind Reliable, Scalable, and Maintainable Systems-O’Reilly Media.jpg)
-
-
+![two](/images/blog/2018.05/Martin Kleppmann-Designing Data-Intensive Applications_ The Big Ideas Behind Reliable, Scalable, and Maintainable Systems-O’Reilly Media.jpg) 
 
 
 
