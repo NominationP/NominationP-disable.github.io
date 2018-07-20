@@ -22,7 +22,7 @@ date:   2018-05-13 11:28
 - Can’t we maybe find a more efficient implementation of linearizable storage? It seems the answer is no
 - In Chapter 12 we will discuss some approaches for avoiding linearizability without sacrificing correctness.
 
-> ok , what mean Linearizability about last part of this Chapter, oh,oh, 一点屁用都没,来我们在12章讨论一些(有用的?)东西
+> ok , what mean Linearizability about last part of this Chapter, oh,oh, ,来我们在12章讨论一些(有用的?)东西
 
 
 ## 
