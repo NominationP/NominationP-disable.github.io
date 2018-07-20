@@ -64,6 +64,7 @@ UPDATE counters SET value = value + 1 WHERE key = 'foo';
 
 - Atomic operations are usually implemented by taking an **exclusive lock** on the object
 ## Explicit locking
+
 ```
 
 BEGIN TRANSACTION;
