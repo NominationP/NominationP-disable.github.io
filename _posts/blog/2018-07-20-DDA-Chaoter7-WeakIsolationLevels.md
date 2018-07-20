@@ -1,6 +1,6 @@
 ﻿---
 layout: article
-title: "2PC"
+title: "DDA-Chapter 7 Transactions Weak Isolation Levels"
 category: blog
 tag:
 - DDA 
@@ -10,9 +10,9 @@ tag:
 toc: flase
 image:
 #  feature:
-    teaser: /blog/2018.07/116770-20160313203429600-179395429.png
+    teaser: /blog/2018.07/transaction-29-638.jpg
 #  thumb:
-date:   2018-07-13 15:00
+date:   2018-07-20 08:33
 ---
 
 Read Committed
