@@ -66,13 +66,13 @@ UPDATE counters SET value = value + 1 WHERE key = 'foo';
 ## Explicit locking
 ```
 
-# BEGIN TRANSACTION;
- # SELECT * FROM figures
- # WHERE name = 'robot' AND game_id = 222 FOR UPDATE;
- # -- Check whether move is valid, then update the position
- # -- of the piece that was returned by the previous SELECT. UPDATE figures SET position = 'c4' WHERE id = 1234;
- # COMMIT;
- ```
+BEGIN TRANSACTION;
+SELECT * FROM figures
+WHERE name = 'robot' AND game_id = 222 FOR UPDATE;
+-- Check whether move is valid, then update the position
+-- of the piece that was returned by the previous SELECT. UPDATE figures SET position = 'c4' WHERE id = 1234;
+COMMIT;
+```
 
 >  tip : The FOR UPDATE clause indicates that the database should take a lock on all rows returned by this query.
   ## Automatically detecting lost updates
@@ -80,8 +80,8 @@ UPDATE counters SET value = value + 1 WHERE key = 'foo';
 ## Compare-and-set
  ```
 -- This may or may not be safe, depending on the database implementation 
- # UPDATE wiki_pages SET content = 'new content' WHERE id = 1234 AND content = 'old content';
- ```
+UPDATE wiki_pages SET content = 'new content' WHERE id = 1234 AND content = 'old content';
+```
 
  ## Conflict resolution and replication
 # Write Skew and Phantoms
@@ -91,13 +91,13 @@ UPDATE counters SET value = value + 1 WHERE key = 'foo';
 - You can think of **write skew as a generalization of the lost update problem.** Write skew can occur if two transactions read the same objects, and then update some of those objects (different transactions may update different objects). In the special case where different transactions update the same object, you get a dirty write or lost update anomaly (depending on the timing).
 ```
 
-# BEGIN TRANSACTION;
- # SELECT * FROM doctors
- # WHERE on_call = true AND shift_id = 1234 FOR UPDATE;
- # UPDATE doctors
- # SET on_call = false WHERE name = 'Alice' AND shift_id = 1234;
- # COMMIT;
-  ```
+BEGIN TRANSACTION;
+SELECT * FROM doctors
+WHERE on_call = true AND shift_id = 1234 FOR UPDATE;
+UPDATE doctors
+SET on_call = false WHERE name = 'Alice' AND shift_id = 1234;
+COMMIT;
+```
 
 >  As before, FOR UPDATE tells the database to lock all rows returned by this query.
  ## More examples of write skew
@@ -105,12 +105,12 @@ UPDATE counters SET value = value + 1 WHERE key = 'foo';
  Example 7-2. A meeting room booking system tries to avoid double-booking (not safe under snapshot isolation)
 ```
 
-# BEGIN TRANSACTION; -- Check for any existing bookings that overlap with the period of noon-1pm SELECT COUNT(*) FROM bookings
- # WHERE room_id = 123 AND end_time > '2015-01-01 12:00' AND start_time < '2015-01-01 13:00';
- # -- If the previous query returned zero:
- # INSERT INTO bookings (room_id, start_time, end_time, user_id) VALUES (123, '2015-01-01 12:00', '2015-01-01 13:00', 666);
- # COMMIT;
- ```
+BEGIN TRANSACTION; -- Check for any existing bookings that overlap with the period of noon-1pm SELECT COUNT(*) FROM bookings
+WHERE room_id = 123 AND end_time > '2015-01-01 12:00' AND start_time < '2015-01-01 13:00';
+-- If the previous query returned zero:
+INSERT INTO bookings (room_id, start_time, end_time, user_id) VALUES (123, '2015-01-01 12:00', '2015-01-01 13:00', 666);
+COMMIT;
+```
 
 >  Unfortunately, **snapshot isolation** does not prevent another user from concurrently inserting a conflicting meeting. In order to guarantee you won’t get scheduling conflicts, you once again need **serializable isolation**.
   - Multiplayer game
