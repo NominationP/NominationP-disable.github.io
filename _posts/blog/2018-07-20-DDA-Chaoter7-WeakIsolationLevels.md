@@ -24,29 +24,29 @@ date:   2018-07-20 08:33
 ## Implementing read committed
 - Most commonly, databases prevent dirty writes by using row-level locks
 - How do we prevent dirty reads?
- One option would be to use the same lock, and to require any transaction that wants to read an object to briefly acquire the lock and then release it again immediately after reading.                       **However,** the approach of requiring read locks does not work well in practice, because one long-running write transaction can force many read-only transactions to wait until the long-running transaction has completed.
- for every object that is written, the database remembers both the old committed value and the new value set by the transaction that currently holds the write lock.
+One option would be to use the same lock, and to require any transaction that wants to read an object to briefly acquire the lock and then release it again immediately after reading.                       **However,** the approach of requiring read locks does not work well in practice, because one long-running write transaction can force many read-only transactions to wait until the long-running transaction has completed.
+for every object that is written, the database remembers both the old committed value and the new value set by the transaction that currently holds the write lock.
 # Snapshot Isolation and Repeatable Read
 ## read committed isolation couldn't prevent **Read skew <no repeat read>**
 ![Figure 7-6. Read skew: Alice observes the database in an inconsistent state.](https://i.pinimg.com/originals/f3/81/93/f38193d519d72de20df2b56ab7871c55.png)
 - This anomaly is called a **nonrepeatable read or read skew**
 - Some issue (cannot tolerate such temporary inconsistency)
- Backups
- Analytic queries and integrity checks
+Backups
+Analytic queries and integrity checks
 ## Snapshot isolation is the most common **solution to this problem**. The idea is that each transaction reads from a consistent snapshot of the database
 ## @pro @mvcc Implementing snapshot isolation
 - **multiversion concurrency control (MVCC)**
 - MVCC DIFF read committed isolation
- If a database only needed to provide read committed isolation, but not snapshot isolation, it would be sufficient to keep two versions of an object: the committed version and the overwritten-but-not-yet-committed version. However, storage engines that support snapshot isolation typically use MVCC for their read committed isolation level as well. A typical approach is that read committed uses a separate snapshot for each query, while snapshot isolation uses the same snapshot for an entire transaction
+If a database only needed to provide read committed isolation, but not snapshot isolation, it would be sufficient to keep two versions of an object: the committed version and the overwritten-but-not-yet-committed version. However, storage engines that support snapshot isolation typically use MVCC for their read committed isolation level as well. A typical approach is that read committed uses a separate snapshot for each query, while snapshot isolation uses the same snapshot for an entire transaction
 - @pro ![Figure 7-7. Implementing snapshot isolation using multi-version objects.](https://i.pinimg.com/originals/d5/df/83/d5df8380d703f38dff000fc5ca42002b.png)
 - @pro Visibility rules for observing a consistent snapshot
- 1. At the start of each transaction, the database makes a list of all the other transactions that are in progress (not yet committed or aborted) at that time. Any writes that those transactions have made are ignored, even if the transactions subsequently commit.
- 2. Any writes made by aborted transactions are ignored.
- 3. Any writes made by transactions with a later transaction ID (i.e., which started after the current transaction started) are ignored, regardless of whether those transactions have committed.
- 4. All other writes are visible to the application’s queries.
+1. At the start of each transaction, the database makes a list of all the other transactions that are in progress (not yet committed or aborted) at that time. Any writes that those transactions have made are ignored, even if the transactions subsequently commit.
+2. Any writes made by aborted transactions are ignored.
+3. Any writes made by transactions with a later transaction ID (i.e., which started after the current transaction started) are ignored, regardless of whether those transactions have committed.
+4. All other writes are visible to the application’s queries.
 - Put another way, an object is visible if both of the following conditions are true:
- 1. At the time when the reader’s transaction started, the transaction that created the object had already committed.
- 2. The object is not marked for deletion, or if it is, the transaction that requested deletion had not yet committed at the time when the reader’s transaction started.
+1. At the time when the reader’s transaction started, the transaction that created the object had already committed.
+2. The object is not marked for deletion, or if it is, the transaction that requested deletion had not yet committed at the time when the reader’s transaction started.
 ## Indexes and snapshot isolation
 - common index / garbage collection / append-only/copy-on-write variant /B-trees
 ## Repeatable read and naming confusion
@@ -75,15 +75,15 @@ COMMIT;
 ```
 
 >  tip : The FOR UPDATE clause indicates that the database should take a lock on all rows returned by this query.
-  ## Automatically detecting lost updates
+## Automatically detecting lost updates
 - An advantage of this approach is that databases can perform this check efficiently in conjunction with snapshot isolation. However, **MySQL/ InnoDB’s repeatable read does not detect lost updates**
 ## Compare-and-set
- ```
+```
 -- This may or may not be safe, depending on the database implementation 
 UPDATE wiki_pages SET content = 'new content' WHERE id = 1234 AND content = 'old content';
 ```
 
- ## Conflict resolution and replication
+## Conflict resolution and replication
 # Write Skew and Phantoms
 ![Figure 7-8. Example of write skew causing an application bug.](https://i.pinimg.com/originals/c7/dc/6c/c7dc6c21c2f6c65654554f4ca5b8a348.png)
 ## Characterizing write skew
@@ -100,9 +100,9 @@ COMMIT;
 ```
 
 >  As before, FOR UPDATE tells the database to lock all rows returned by this query.
- ## More examples of write skew
+## More examples of write skew
 - Meeting room booking system
- Example 7-2. A meeting room booking system tries to avoid double-booking (not safe under snapshot isolation)
+Example 7-2. A meeting room booking system tries to avoid double-booking (not safe under snapshot isolation)
 ```
 
 BEGIN TRANSACTION; -- Check for any existing bookings that overlap with the period of noon-1pm SELECT COUNT(*) FROM bookings
@@ -113,27 +113,26 @@ COMMIT;
 ```
 
 >  Unfortunately, **snapshot isolation** does not prevent another user from concurrently inserting a conflicting meeting. In order to guarantee you won’t get scheduling conflicts, you once again need **serializable isolation**.
-  - Multiplayer game
- In Example 7-1, we used a lock to prevent lost updates (that is, making sure that two players can’t move the same figure at the same time). However, the lock doesn’t prevent players from moving two different figures to the same position on the board or potentially making some other move that violates the rules of the game. Depending on the kind of rule you are enforcing, you might be able to use a unique constraint, but otherwise you’re vulnerable to write skew.
+- Multiplayer game
+In Example 7-1, we used a lock to prevent lost updates (that is, making sure that two players can’t move the same figure at the same time). However, the lock doesn’t prevent players from moving two different figures to the same position on the board or potentially making some other move that violates the rules of the game. Depending on the kind of rule you are enforcing, you might be able to use a unique constraint, but otherwise you’re vulnerable to write skew.
 - Claiming a username
- Fortunately, a unique constraint is a simple solution here
+Fortunately, a unique constraint is a simple solution here
 - Preventing double-spending
 ## Phantoms causing write skew
 - All of these examples follow a similar pattern:
- 1. A SELECT query checks whether some requirement is satisfied by searching for rows that match some search condition (there are at least two doctors on call, there are no existing bookings for that room at that time, the position on the board doesn’t already have another figure on it, the username isn’t already taken, there is still money in the account).
- 2. Depending on the result of the first query, the application code decides how to continue (perhaps to go ahead with the operation, or perhaps to report an error to the user and abort).
- 3. If the application decides to go ahead, it makes a write (INSERT, UPDATE, or DELETE) to the database and commits the transaction.
+1. A SELECT query checks whether some requirement is satisfied by searching for rows that match some search condition (there are at least two doctors on call, there are no existing bookings for that room at that time, the position on the board doesn’t already have another figure on it, the username isn’t already taken, there is still money in the account).
+2. Depending on the result of the first query, the application code decides how to continue (perhaps to go ahead with the operation, or perhaps to report an error to the user and abort).
+3. If the application decides to go ahead, it makes a write (INSERT, UPDATE, or DELETE) to the database and commits the transaction.
 - The steps may occur in a different order. For example, you could first make the write, then the SELECT query, and finally decide whether to abort or commit based on the result of the query.
 - In the case of the doctor on call example, the row being modified in step 3 was one of the rows returned in step 1, so we could make the transaction safe and avoid write skew by locking the rows in step 1 (SELECT FOR UPDATE). However, the other four examples are different: they check for the absence of rows matching some search condition, and the write adds a row matching the same condition. If the query in step 1 doesn’t return any rows, SELECT FOR UPDATE can’t attach locks to anything.
 - This effect, where a write in one transaction changes the result of a search query in another transaction, is called a **phantom** [3]. **Snapshot isolation avoids phantoms in read-only queries, but in read-write transactions like the examples we discussed, phantoms can lead to particularly tricky cases of write skew.**
 ## Materializing conflicts
 - If the problem of phantoms is that there is no object to which we can attach the locks, perhaps we can artificially introduce a lock object into the database?
- >  For example, in the meeting room booking case you could imagine creating a table of time slots and rooms. Each row in this table corresponds to a particular room for a particular time period (say, 15 minutes). You create rows for all possible combinations of rooms and time periods ahead of time, e.g. for the next six months.
- >  Now a transaction that wants to create a booking can lock (SELECT FOR UPDATE) the rows in the table that correspond to the desired room and time period. After it has acquired the locks, it can check for overlapping bookings and insert a new booking as before. Note that the additional table isn’t used to store information about the booking—it’s purely a collection of locks which is used to prevent bookings on the same room and time range from being modified concurrently.
- - This approach is called **materializing conflicts**, because it takes a phantom and turns it into a lock conflict on a concrete set of rows that exist in the database [11]. Unfortunately, it can be hard and error-prone to figure out how to materialize conflicts, and it’s ugly to let a concurrency control mechanism leak into the application data model. For those reasons, materializing conflicts should be considered a last resort if no alternative is possible. **A serializable isolation level is much preferable in most cases.**
+>  For example, in the meeting room booking case you could imagine creating a table of time slots and rooms. Each row in this table corresponds to a particular room for a particular time period (say, 15 minutes). You create rows for all possible combinations of rooms and time periods ahead of time, e.g. for the next six months.
+>  Now a transaction that wants to create a booking can lock (SELECT FOR UPDATE) the rows in the table that correspond to the desired room and time period. After it has acquired the locks, it can check for overlapping bookings and insert a new booking as before. Note that the additional table isn’t used to store information about the booking—it’s purely a collection of locks which is used to prevent bookings on the same room and time range from being modified concurrently.
+- This approach is called **materializing conflicts**, because it takes a phantom and turns it into a lock conflict on a concrete set of rows that exist in the database [11]. Unfortunately, it can be hard and error-prone to figure out how to materialize conflicts, and it’s ugly to let a concurrency control mechanism leak into the application data model. For those reasons, materializing conflicts should be considered a last resort if no alternative is possible. **A serializable isolation level is much preferable in most cases.**
 # **OK, what I saw** 
 ## 1. read committed / dirty read / dirty write
 ## 2. repeatable read (read skew) / snapshot isolation (repeatable read in mysql) implement by MVCC 
 ## 3. lost update : scenarios and method ( atomic write oprations / explicit locking / automatically detecting lost updates / compare-and-set)
 ## 4. write skew / examples ( meeting room booking system / multiplayer game / claiming a username / preventing double-spending) / phantoms causing write skew ( pattern ) / sovle method : materializing conflicts , serializable isolation level 
-# 
