@@ -7,7 +7,7 @@ tag:
 - english
 
 #excerpt:
-toc: true
+toc: false
 image:
 #  feature:
     teaser: /blog/2018.07/transaction-29-638.jpg
