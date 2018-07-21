@@ -15,9 +15,9 @@ image:
 date:   2018-07-20 08:33
 ---
 
-# Read Committed
+## Read Committed
 
-## two guarantees:
+### two guarantees:
 
 - 1. When reading from the database, you will only see data that has been committed (no dirty reads).
 
@@ -27,7 +27,7 @@ date:   2018-07-20 08:33
 
 ![dirty write](https://i.pinimg.com/originals/c7/dc/6c/c7dc6c21c2f6c65654554f4ca5b8a348.png)
 
-## Implementing read committed
+### Implementing read committed
 
 - Most commonly, databases prevent dirty writes by using row-level locks
 
@@ -37,9 +37,9 @@ One option would be to use the same lock, and to require any transaction that wa
 
 for every object that is written, the database remembers both the old committed value and the new value set by the transaction that currently holds the write lock.
 
-# Snapshot Isolation and Repeatable Read
+## Snapshot Isolation and Repeatable Read
 
-## read committed isolation couldn't prevent **Read skew <no repeat read>**
+### read committed isolation couldn't prevent **Read skew <no repeat read>**
 
 ![Figure 7-6. Read skew: Alice observes the database in an inconsistent state.](https://i.pinimg.com/originals/f3/81/93/f38193d519d72de20df2b56ab7871c55.png)
 
@@ -51,9 +51,9 @@ Backups
 
 Analytic queries and integrity checks
 
-## Snapshot isolation is the most common **solution to this problem**. The idea is that each transaction reads from a consistent snapshot of the database
+### Snapshot isolation is the most common **solution to this problem**. The idea is that each transaction reads from a consistent snapshot of the database
 
-## @pro @mvcc Implementing snapshot isolation
+### @pro @mvcc Implementing snapshot isolation
 
 - **multiversion concurrency control (MVCC)**
 
@@ -79,19 +79,19 @@ If a database only needed to provide read committed isolation, but not snapshot 
 
 2. The object is not marked for deletion, or if it is, the transaction that requested deletion had not yet committed at the time when the reader’s transaction started.
 
-## Indexes and snapshot isolation
+### Indexes and snapshot isolation
 
 - common index / garbage collection / append-only/copy-on-write variant /B-trees
 
-## Repeatable read and naming confusion
+### Repeatable read and naming confusion
 
 - **Snapshot isolation** is a useful isolation level, especially for read-only transactions. However, many databases that implement it call it by different names. In **Oracle** it is called **serializable**, and in **PostgreSQL** **and** **MySQL** it is called **repeatable read** [23].
 
-# Preventing Lost Updates
+## Preventing Lost Updates
 
 ![Figure 7-1. A race condition between two clients concurrently incrementing a counter.](https://i.pinimg.com/originals/14/2d/94/142d943e2b6b9dbcbadc39a72a4bbd68.png)
 
-## different scenarios
+### different scenarios
 
 - Incrementing a counter or updating an account balance (requires reading the current value, calculating the new value, and writing back the updated value)
 
@@ -99,7 +99,7 @@ If a database only needed to provide read committed isolation, but not snapshot 
 
 - Two users editing a wiki page at the same time, where each user saves their changes by sending the entire page contents to the server, overwriting whatever is currently in the database
 
-## Atomic write operations
+### Atomic write operations
 
 ```
 UPDATE counters SET value = value + 1 WHERE key = 'foo';
@@ -108,7 +108,7 @@ UPDATE counters SET value = value + 1 WHERE key = 'foo';
 
 - Atomic operations are usually implemented by taking an **exclusive lock** on the object
 
-## Explicit locking
+### Explicit locking
 
 ```
 
@@ -138,11 +138,11 @@ COMMIT;
 
 
 
-## Automatically detecting lost updates
+### Automatically detecting lost updates
 
 - An advantage of this approach is that databases can perform this check efficiently in conjunction with snapshot isolation. However, **MySQL/ InnoDB’s repeatable read does not detect lost updates**
 
-## Compare-and-set
+### Compare-and-set
 
 
 ```
@@ -156,13 +156,13 @@ UPDATE wiki_pages SET content = 'new content' WHERE id = 1234 AND content = 'old
 
 
 
-## Conflict resolution and replication
+### Conflict resolution and replication
 
-# Write Skew and Phantoms
+## Write Skew and Phantoms
 
 ![Figure 7-8. Example of write skew causing an application bug.](https://i.pinimg.com/originals/c7/dc/6c/c7dc6c21c2f6c65654554f4ca5b8a348.png)
 
-## Characterizing write skew
+### Characterizing write skew
 
 - It is neither a dirty write nor a lost update,
 
@@ -196,7 +196,7 @@ COMMIT;
 >  As before, FOR UPDATE tells the database to lock all rows returned by this query.
 
 
-## More examples of write skew
+### More examples of write skew
 
 - Meeting room booking system
 
@@ -237,7 +237,7 @@ Fortunately, a unique constraint is a simple solution here
 
 - Preventing double-spending
 
-## Phantoms causing write skew
+### Phantoms causing write skew
 
 - All of these examples follow a similar pattern:
 
@@ -253,7 +253,7 @@ Fortunately, a unique constraint is a simple solution here
 
 - This effect, where a write in one transaction changes the result of a search query in another transaction, is called a **phantom** [3]. **Snapshot isolation avoids phantoms in read-only queries, but in read-write transactions like the examples we discussed, phantoms can lead to particularly tricky cases of write skew.**
 
-## Materializing conflicts
+### Materializing conflicts
 
 - If the problem of phantoms is that there is no object to which we can attach the locks, perhaps we can artificially introduce a lock object into the database?
 
@@ -266,13 +266,13 @@ Fortunately, a unique constraint is a simple solution here
 
 - This approach is called **materializing conflicts**, because it takes a phantom and turns it into a lock conflict on a concrete set of rows that exist in the database [11]. Unfortunately, it can be hard and error-prone to figure out how to materialize conflicts, and it’s ugly to let a concurrency control mechanism leak into the application data model. For those reasons, materializing conflicts should be considered a last resort if no alternative is possible. **A serializable isolation level is much preferable in most cases.**
 
-# **OK, what I saw** 
+## **OK, what I saw** 
 
-## 1. read committed / dirty read / dirty write
+### 1. read committed / dirty read / dirty write
 
-## 2. repeatable read (read skew) / snapshot isolation (repeatable read in mysql) implement by MVCC 
+### 2. repeatable read (read skew) / snapshot isolation (repeatable read in mysql) implement by MVCC 
 
-## 3. lost update : scenarios and method ( atomic write oprations / explicit locking / automatically detecting lost updates / compare-and-set)
+### 3. lost update : scenarios and method ( atomic write oprations / explicit locking / automatically detecting lost updates / compare-and-set)
 
-## 4. write skew / examples ( meeting room booking system / multiplayer game / claiming a username / preventing double-spending) / phantoms causing write skew ( pattern ) / sovle method : materializing conflicts , serializable isolation level 
+### 4. write skew / examples ( meeting room booking system / multiplayer game / claiming a username / preventing double-spending) / phantoms causing write skew ( pattern ) / sovle method : materializing conflicts , serializable isolation level 
 
